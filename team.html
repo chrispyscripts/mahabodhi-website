@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team · Mahabodhi Health &amp; Fitness · Solo</title>
+  <meta name="description" content="Meet the trainers, coaches, and therapists behind Mahabodhi Health & Fitness Center in Solo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Mahabodhi home">
+        <span class="brand__leaf" aria-hidden="true"><img src="assets/logo-tree.png" alt="" /></span>
+        <span class="brand__text">MAHA<strong>BODHI</strong></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <a href="group-training.html" data-i18n="nav.training">Group Training</a>
+        <a href="restaurant.html" data-i18n="nav.restaurant">Restaurant</a>
+        <a href="team.html" aria-current="page" data-i18n="nav.team">Our Team</a>
+        <a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="index.html#community" data-i18n="nav.community">Community</a>
+        <a href="index.html#contact" class="nav__cta" data-i18n="nav.cta">Join Us</a>
+      </nav>
+      <div class="nav__right">
+        <div class="nav__lang">
+          <span class="nav__lang-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <select id="langSelect" aria-label="Select language">
+            <option value="en">EN</option><option value="id">ID</option><option value="jv">JV</option>
+          </select>
+        </div>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background-image:url('assets/coaching.jpg')"></div>
+    <div class="container">
+      <p class="eyebrow">The People</p>
+      <h1>Our Team</h1>
+      <p class="page-hero__lead">Certified trainers, coaches, and therapists who live and breathe healthy living — here to guide every step of your journey.</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="container">
+      <p class="team__note reveal" id="teamNote"></p>
+      <div class="team__grid" id="teamGrid"></div>
+      <div class="section__cta reveal">
+        <a href="index.html#contact" class="btn btn--primary" data-i18n="nav.cta">Join Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="brand brand--footer">
+        <span class="brand__leaf" aria-hidden="true"><img src="assets/logo-tree.png" alt="" /></span>
+        <span class="brand__text">MAHA<strong>BODHI</strong></span>
+      </a>
+      <p class="footer__tag" data-i18n="footer.tag">Your Health Is Your Wealth · One Stop Healthy Solution</p>
+      <p class="footer__copy">© <span id="year"></span> <span data-i18n="footer.copy">Mahabodhi Health &amp; Fitness Center, Solo. All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

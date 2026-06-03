@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahabodhi · Health &amp; Fitness Center · Solo</title>
+  <meta name="description" content="Mahabodhi Health & Fitness Center in Solo (Surakarta) — your One Stop Healthy Solution. Gym, group classes, physiotherapy, and a healthy eatery. Your health is your wealth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="brand" aria-label="Mahabodhi home">
+        <span class="brand__leaf" aria-hidden="true">
+          <img src="assets/logo-tree.png" alt="" />
+        </span>
+        <span class="brand__text">MAHA<strong>BODHI</strong></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="group-training.html" data-i18n="nav.training">Group Training</a>
+        <a href="restaurant.html" data-i18n="nav.restaurant">Restaurant</a>
+        <a href="team.html" data-i18n="nav.team">Our Team</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#community" data-i18n="nav.community">Community</a>
+        <a href="#contact" class="nav__cta" data-i18n="nav.cta">Join Us</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="nav__lang">
+          <span class="nav__lang-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </span>
+          <select id="langSelect" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="id">ID</option>
+            <option value="jv">JV</option>
+          </select>
+        </div>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__content reveal">
+      <p class="eyebrow">Solo · Surakarta · Indonesia</p>
+      <h1 class="hero__title" data-i18n="hero.title">Your Health<br />Is Your <span class="grad">Wealth</span></h1>
+      <p class="hero__lead" data-i18n="hero.lead">
+        Mahabodhi is Solo's <strong>One Stop Healthy Solution</strong> — a fitness center,
+        movement studio, recovery clinic, and healthy kitchen growing under one roof.
+      </p>
+      <div class="hero__actions">
+        <a href="group-training.html" class="btn btn--primary" data-i18n="hero.btnClasses">Explore Classes</a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="hero.btnVisit">Visit the Center</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><span class="stat__num" data-count="8">0</span><span class="stat__label" data-i18n="hero.stat1">Signature Classes</span></div>
+        <div class="stat"><span class="stat__num" data-count="5000" data-suffix="+">0</span><span class="stat__label" data-i18n="hero.stat2">Community Members</span></div>
+        <div class="stat"><span class="stat__num" data-count="3">0</span><span class="stat__label" data-i18n="hero.stat3">Floors of Wellness</span></div>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Yoga</span><span>•</span><span>Zumba</span><span>•</span><span>Pound Fit</span><span>•</span>
+      <span>Tabata</span><span>•</span><span>Boxing</span><span>•</span><span>Circuit Training</span><span>•</span>
+      <span>Body Shape</span><span>•</span><span>Core Blast</span><span>•</span><span>Physiotherapy</span><span>•</span>
+      <span>Yoga</span><span>•</span><span>Zumba</span><span>•</span><span>Pound Fit</span><span>•</span>
+      <span>Tabata</span><span>•</span><span>Boxing</span><span>•</span><span>Circuit Training</span><span>•</span>
+      <span>Body Shape</span><span>•</span><span>Core Blast</span><span>•</span><span>Physiotherapy</span><span>•</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container about__grid">
+      <div class="about__text reveal">
+        <p class="eyebrow" data-i18n="about.eyebrow">The Bodhi Philosophy</p>
+        <h2 class="section__title" data-i18n="about.title">Rooted in life,<br />resilience &amp; shelter.</h2>
+        <p data-i18n="about.p1">
+          Our name is inspired by the <em>Bodhi tree</em> — a symbol of life, strength, and
+          a place of refuge. That spirit shapes everything we do: a welcoming home where
+          movement, nutrition, and recovery come together to help you grow stronger every day.
+        </p>
+        <p data-i18n="about.p2">
+          We believe wellness isn't built in the gym alone. It's the balance of how you
+          <strong>train, eat, and recover</strong>. That's why Mahabodhi brings it all under one roof —
+          from the workout floor to the healthy kitchen.
+        </p>
+        <ul class="about__pillars">
+          <li><span>01</span> <span data-i18n="about.pillar1">Train with purpose</span></li>
+          <li><span>02</span> <span data-i18n="about.pillar2">Eat with intention</span></li>
+          <li><span>03</span> <span data-i18n="about.pillar3">Recover with care</span></li>
+        </ul>
+      </div>
+      <div class="about__visual reveal">
+        <div class="about__photo"><img src="assets/yoga.jpg" alt="Yoga practice at Maha Bodhi Health & Fitness Center" loading="lazy" /></div>
+        <div class="about__card about__card--main">
+          <div class="about__leaf" aria-hidden="true">
+            <img src="assets/logo-tree.png" alt="" />
+          </div>
+          <p class="about__quote">"One Stop Healthy Solution"</p>
+          <p class="about__sub" data-i18n="about.sub">Move. Nourish. Restore.</p>
+        </div>
+        <div class="about__card about__card--badge">
+          <strong>Sport Tourism Solo</strong>
+          <span data-i18n="about.badgeText">A recognised pillar of the city's active-living movement</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="services.eyebrow">What We Offer</p>
+        <h2 class="section__title" data-i18n="services.title">Everything for a healthier you</h2>
+        <p class="section__intro" data-i18n="services.intro">Four connected experiences designed to meet you wherever you are on your journey.</p>
+      </div>
+      <div class="services__grid">
+        <article class="svc reveal">
+          <div class="svc__img" style="background-image:url('assets/weights.jpg')"></div>
+          <div class="svc__body">
+            <h3 data-i18n="svc1.title">Fitness Center</h3>
+            <p data-i18n="svc1.desc">Spacious, fully-equipped gym floors with strength, cardio, and free-weight zones — built to help every member realise their goals.</p>
+            <span class="svc__tag" data-i18n="svc1.tag">Open daily</span>
+          </div>
+        </article>
+        <a class="svc svc--link reveal" href="group-training.html">
+          <div class="svc__img" style="background-image:url('assets/medball-class.jpg')"></div>
+          <div class="svc__body">
+            <h3 data-i18n="svc2.title">Group Classes</h3>
+            <p data-i18n="svc2.desc">Eight signature classes from high-energy Zumba and Pound Fit to grounding Yoga and intense MB Tabata — led by certified instructors.</p>
+            <span class="svc__tag" data-i18n="svc2.tag">All levels</span>
+          </div>
+        </a>
+        <article class="svc reveal">
+          <div class="svc__img" style="background-image:url('assets/physio-room.jpg')"></div>
+          <div class="svc__body">
+            <h3 data-i18n="svc3.title">Physiotherapy</h3>
+            <p data-i18n="svc3.desc">Recover faster. Our physio team supports injury rehab, mobility, and pain relief so you can train with confidence and longevity.</p>
+            <span class="svc__tag" data-i18n="svc3.tag">By appointment</span>
+          </div>
+        </article>
+        <a class="svc svc--link reveal" href="restaurant.html">
+          <div class="svc__img" style="background-image:url('assets/coffee.jpg')"></div>
+          <div class="svc__body">
+            <h3 data-i18n="svc4.title">Healthy Eatery</h3>
+            <p data-i18n="svc4.desc">Fuel up at Casa Fina Café &amp; Healthy Bar, or gather at Hannari Japanese BBQ — clean eating that never compromises on flavour.</p>
+            <span class="svc__tag" data-i18n="svc4.tag">2 concepts</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="classes section" id="classes">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="classes.eyebrow">Move With Us</p>
+        <h2 class="section__title" data-i18n="classes.title">Our signature classes</h2>
+        <p class="section__intro" data-i18n="classes.intro">Find your rhythm — whether you want to sweat, build, flow, or fight.</p>
+      </div>
+
+      <div class="classes__grid">
+        <div class="class-card reveal" data-cat="cardio">
+          <div class="class-card__top"><h3>Zumba</h3><span class="pill pill--cardio" data-i18n="pill.cardio">Cardio</span></div>
+          <p data-i18n="cls1.desc">Dance-fuelled cardio party that burns calories and lifts your mood.</p>
+        </div>
+        <div class="class-card reveal" data-cat="cardio">
+          <div class="class-card__top"><h3>Pound Fit</h3><span class="pill pill--cardio" data-i18n="pill.cardio">Cardio</span></div>
+          <p data-i18n="cls2.desc">Drumstick-driven workout blending rhythm, strength, and full-body cardio.</p>
+        </div>
+        <div class="class-card reveal" data-cat="strength">
+          <div class="class-card__top"><h3>MB Tabata</h3><span class="pill pill--strength" data-i18n="pill.hiit">HIIT</span></div>
+          <p data-i18n="cls3.desc">Short, explosive intervals engineered for maximum fat burn.</p>
+        </div>
+        <div class="class-card reveal" data-cat="strength">
+          <div class="class-card__top"><h3>MB Circuit Training</h3><span class="pill pill--strength" data-i18n="pill.strength">Strength</span></div>
+          <p data-i18n="cls4.desc">Station-to-station conditioning that builds power and endurance.</p>
+        </div>
+        <div class="class-card reveal" data-cat="strength">
+          <div class="class-card__top"><h3>MB Boxing</h3><span class="pill pill--strength" data-i18n="pill.combat">Combat</span></div>
+          <p data-i18n="cls5.desc">Punch, jab, and footwork drills for a powerful, stress-busting sweat.</p>
+        </div>
+        <div class="class-card reveal" data-cat="strength">
+          <div class="class-card__top"><h3>MB Body Shape</h3><span class="pill pill--strength" data-i18n="pill.sculpt">Sculpt</span></div>
+          <p data-i18n="cls6.desc">Targeted toning to sculpt, define, and strengthen every muscle group.</p>
+        </div>
+        <div class="class-card reveal" data-cat="strength">
+          <div class="class-card__top"><h3>MB Core Blast</h3><span class="pill pill--strength" data-i18n="pill.core">Core</span></div>
+          <p data-i18n="cls7.desc">Focused core work to build a stable, strong, and balanced midsection.</p>
+        </div>
+        <div class="class-card reveal" data-cat="mind">
+          <div class="class-card__top"><h3>Yoga</h3><span class="pill pill--mind" data-i18n="pill.mind">Mind &amp; Body</span></div>
+          <p data-i18n="cls8.desc">Breath, flow, and flexibility to restore balance and calm the mind.</p>
+        </div>
+      </div>
+      <div class="section__cta reveal">
+        <a href="group-training.html" class="btn btn--primary" data-i18n="classes.cta">View Group Training &amp; Schedule →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EATERY -->
+  <section class="eatery section" id="eatery">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="eatery.eyebrow">Mahabodhi Eatery</p>
+        <h2 class="section__title" data-i18n="eatery.title">Eat well, live well</h2>
+        <p class="section__intro" data-i18n="eatery.intro">Steps from the gym floor — proof that healthy food can taste incredible.</p>
+      </div>
+
+      <div class="eatery__grid">
+        <article class="eatery__card reveal">
+          <div class="eatery__floor" data-i18n="eat1.floor">2nd Floor</div>
+          <h3>Casa Fina Café &amp; Healthy Bar</h3>
+          <p data-i18n="eat1.desc">A relaxed space for healthy brunch — fresh salads, smoothie bowls, and low-calorie sandwiches, plus organic juices and smoothies boosted with superfoods like chia seeds and spirulina.</p>
+          <ul class="chips">
+            <li data-i18n="eat1.chip1">Smoothie Bowls</li><li data-i18n="eat1.chip2">Fresh Salads</li><li data-i18n="eat1.chip3">Cold-Pressed Juice</li><li data-i18n="eat1.chip4">Low-Cal Sandwiches</li>
+          </ul>
+        </article>
+        <article class="eatery__card reveal">
+          <div class="eatery__floor" data-i18n="eat2.floor">3rd Floor</div>
+          <h3>Hannari Japanese BBQ &amp; Teppanyaki</h3>
+          <p data-i18n="eat2.desc">An interactive all-you-can-eat BBQ &amp; shabu experience — perfect for family celebrations and gatherings with friends and colleagues.</p>
+          <ul class="chips">
+            <li data-i18n="eat2.chip1">All-You-Can-Eat</li><li data-i18n="eat2.chip2">Yakiniku BBQ</li><li data-i18n="eat2.chip3">Shabu Shabu</li><li data-i18n="eat2.chip4">Teppanyaki</li>
+          </ul>
+        </article>
+      </div>
+      <div class="section__cta reveal">
+        <a href="restaurant.html" class="btn btn--primary" data-i18n="eatery.cta">Explore the Restaurant →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="gallery.eyebrow">Inside Maha Bodhi</p>
+        <h2 class="section__title" data-i18n="gallery.title">Step into the space</h2>
+        <p class="section__intro" data-i18n="gallery.intro">From the training floor to the recovery rooms — a look around our home of health.</p>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--wide reveal"><img src="assets/trx-class.jpg" alt="TRX suspension training group class" loading="lazy" /><figcaption data-i18n="gallery.cap1">TRX &amp; Circuit Training</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/coaching.jpg" alt="Personal coaching on the cable machine" loading="lazy" /><figcaption data-i18n="gallery.cap2">1-on-1 Coaching</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/strength.jpg" alt="Strength training at the squat rack" loading="lazy" /><figcaption data-i18n="gallery.cap3">Strength Floor</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/physio-device.jpg" alt="Physiotherapy recovery equipment" loading="lazy" /><figcaption data-i18n="gallery.cap4">Recovery Tech</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/trx-detail.jpg" alt="TRX straps on the studio floor" loading="lazy" /><figcaption data-i18n="gallery.cap5">Functional Studio</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/reception.jpg" alt="Maha Bodhi front desk team" loading="lazy" /><figcaption data-i18n="gallery.cap6">A Warm Welcome</figcaption></figure>
+        <figure class="gallery__item gallery__item--wide reveal"><img src="assets/event.jpg" alt="Community event at Maha Bodhi" loading="lazy" /><figcaption data-i18n="gallery.cap7">Community Events</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/logo-wall.jpg" alt="Maha Bodhi tree-of-life logo" loading="lazy" /><figcaption data-i18n="gallery.cap8">The Bodhi Mark</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community section" id="community">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow" data-i18n="community.eyebrow">More Than A Gym</p>
+        <h2 class="section__title" data-i18n="community.title">A community that lifts each other</h2>
+        <p class="section__intro" data-i18n="community.intro">Events, challenges, and shared milestones — because progress is better together.</p>
+      </div>
+
+      <div class="community__grid">
+        <div class="event reveal">
+          <div class="event__date"><span class="event__day" data-i18n="ev1.day">SAT</span><span class="event__time">07:00</span></div>
+          <div class="event__body">
+            <h3 data-i18n="ev1.title">Weekend Group Burn</h3>
+            <p data-i18n="ev1.desc">Kick off your weekend with our high-energy circuit &amp; Zumba combo open to all members.</p>
+          </div>
+        </div>
+        <div class="event reveal">
+          <div class="event__date"><span class="event__day" data-i18n="ev2.day">MON</span><span class="event__time">18:00</span></div>
+          <div class="event__body">
+            <h3 data-i18n="ev2.title">Yoga &amp; Recovery Flow</h3>
+            <p data-i18n="ev2.desc">Wind down the week with a restorative session guided by our physio &amp; yoga team.</p>
+          </div>
+        </div>
+        <div class="event reveal">
+          <div class="event__date"><span class="event__day">∞</span><span class="event__time" data-i18n="ev3.time">Always</span></div>
+          <div class="event__body">
+            <h3 data-i18n="ev3.title">Share Love Challenges</h3>
+            <p data-i18n="ev3.desc">Seasonal community challenges and giveaways that celebrate every member's journey.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="community__cta reveal">
+        <p data-i18n="community.cta">Follow the journey on Instagram</p>
+        <a class="btn btn--primary" href="https://www.instagram.com/mahabodhisolo/" target="_blank" rel="noopener noreferrer">@mahabodhisolo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__info reveal">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Visit Us</p>
+        <h2 class="section__title" data-i18n="contact.title">Come grow with us</h2>
+        <p class="contact__lead" data-i18n="contact.lead">Drop by, take a tour, and try a class. Your first step toward stronger starts here.</p>
+
+        <ul class="contact__list">
+          <li>
+            <span class="contact__ic">📍</span>
+            <div><strong data-i18n="contact.location">Location</strong><br /><span data-i18n="contact.locationVal">Jl. Dr. Cipto Mangunkusumo No.68, Surakarta (Solo), Central Java, Indonesia</span></div>
+          </li>
+          <li>
+            <span class="contact__ic">🕑</span>
+            <div><strong data-i18n="contact.hours">Hours</strong><br /><span data-i18n="contact.hoursVal">Mon–Fri 07:00–21:00 · Sat–Sun 08:00–20:00</span></div>
+          </li>
+          <li>
+            <span class="contact__ic">💬</span>
+            <div><strong data-i18n="contact.whatsapp">WhatsApp</strong><br /><a href="https://wa.me/6281229120550" target="_blank" rel="noopener noreferrer">0812-2912-0550</a></div>
+          </li>
+          <li>
+            <span class="contact__ic">✉️</span>
+            <div><strong data-i18n="contact.email">Email</strong><br /><a href="mailto:mahabodhisolo@gmail.com">mahabodhisolo@gmail.com</a></div>
+          </li>
+          <li>
+            <span class="contact__ic">📷</span>
+            <div><strong data-i18n="contact.instagram">Instagram</strong><br /><a href="https://www.instagram.com/mahabodhisolo/" target="_blank" rel="noopener noreferrer">@mahabodhisolo</a></div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm" novalidate>
+        <h3 data-i18n="form.title">Book a free intro session</h3>
+        <div class="field">
+          <label for="name" data-i18n="form.name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="form.namePh" required />
+        </div>
+        <div class="field">
+          <label for="phone" data-i18n="form.phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone" placeholder="08xx xxxx xxxx" data-i18n-placeholder="form.phonePh" required />
+        </div>
+        <div class="field">
+          <label for="interest" data-i18n="form.interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option data-i18n="form.opt1">Gym Membership</option>
+            <option data-i18n="form.opt2">Group Classes</option>
+            <option data-i18n="form.opt3">Physiotherapy</option>
+            <option data-i18n="form.opt4">The Eatery</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg" data-i18n="form.msg">Message (optional)</label>
+          <textarea id="msg" name="msg" rows="3" placeholder="Tell us your goals..." data-i18n-placeholder="form.msgPh"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" data-i18n="form.btn">Send Request</button>
+        <p class="form__note" id="formNote" data-i18n="form.note" hidden>Thanks! We'll be in touch soon. 🌱</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="brand brand--footer">
+        <span class="brand__leaf" aria-hidden="true">
+          <img src="assets/logo-tree.png" alt="" />
+        </span>
+        <span class="brand__text">MAHA<strong>BODHI</strong></span>
+      </a>
+      <p class="footer__tag" data-i18n="footer.tag">Your Health Is Your Wealth · One Stop Healthy Solution</p>
+      <p class="footer__copy">© <span id="year"></span> <span data-i18n="footer.copy">Mahabodhi Health &amp; Fitness Center, Solo. All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

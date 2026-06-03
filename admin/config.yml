@@ -1,0 +1,129 @@
+# ===== Mahabodhi content editor (Decap CMS) =====
+# Production: edits commit to GitHub and Vercel auto-redeploys (~30s).
+# Replace OWNER/REPO below after the repo is created (see CMS-SETUP.md).
+backend:
+  name: github
+  repo: OWNER/REPO        # e.g. mahabodhi-solo/mahabodhi-website
+  branch: main
+
+# Lets the client edit on their own computer with no GitHub login while testing:
+#   run `npx decap-server` then open /admin  (see CMS-SETUP.md)
+local_backend: true
+
+media_folder: "assets"     # uploads (e.g. team photos) saved here
+public_folder: "/assets"
+
+site_url: https://mahabodhi-website.vercel.app
+display_url: https://mahabodhi-website.vercel.app
+
+collections:
+  - name: "group_training"
+    label: "Group Training"
+    files:
+      - name: "activities"
+        label: "Activities"
+        file: "content/activities.json"
+        format: "json"
+        description: "The list of group classes shown on the Group Training page."
+        fields:
+          - name: "activities"
+            label: "Activities"
+            label_singular: "Activity"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Name", widget: string }
+              - { name: category, label: "Category label (e.g. Cardio)", widget: string }
+              - name: pill
+                label: "Tag colour"
+                widget: select
+                options: ["cardio", "strength", "mind"]
+                default: "strength"
+                hint: "cardio = orange, strength = gold, mind = neutral"
+              - { name: duration, label: "Duration (minutes)", widget: string }
+              - { name: intensity, label: "Intensity (e.g. High)", widget: string }
+              - { name: level, label: "Level", widget: string, default: "All levels" }
+              - { name: description, label: "Description", widget: text }
+      - name: "schedule"
+        label: "Weekly Schedule"
+        file: "content/schedule.json"
+        format: "json"
+        description: "The weekly class timetable."
+        fields:
+          - { name: note, label: "Footnote", widget: string, required: false }
+          - name: days
+            label: "Days"
+            label_singular: "Day"
+            widget: list
+            summary: "{{fields.day}}"
+            fields:
+              - { name: day, label: "Day", widget: string }
+              - name: slots
+                label: "Sessions"
+                label_singular: "Session"
+                widget: list
+                summary: "{{fields.time}} — {{fields.class}}"
+                fields:
+                  - { name: time, label: "Time", widget: string }
+                  - { name: class, label: "Class", widget: string }
+
+  - name: "team"
+    label: "Our Team"
+    files:
+      - name: "team"
+        label: "Team Members"
+        file: "content/team.json"
+        format: "json"
+        description: "Coaches, instructors and therapists."
+        fields:
+          - { name: note, label: "Intro note", widget: text, required: false }
+          - name: members
+            label: "Members"
+            label_singular: "Member"
+            widget: list
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { name: name, label: "Name", widget: string, hint: "Use 'Coming Soon' if not yet announced" }
+              - { name: role, label: "Role", widget: string }
+              - { name: photo, label: "Photo", widget: image, required: false, hint: "Square photo works best. Leave empty to show the logo." }
+              - { name: bio, label: "Short bio", widget: text }
+
+  - name: "restaurant"
+    label: "Restaurant"
+    files:
+      - name: "restaurant"
+        label: "Venues & Menu"
+        file: "content/restaurant.json"
+        format: "json"
+        description: "Restaurant venues and menu highlights."
+        fields:
+          - name: venues
+            label: "Venues"
+            label_singular: "Venue"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: floor, label: "Floor", widget: string }
+              - { name: name, label: "Name", widget: string }
+              - { name: image, label: "Photo", widget: image, required: false, hint: "Leave empty to show the logo panel." }
+              - { name: description, label: "Description", widget: text }
+              - name: tags
+                label: "Tags"
+                widget: list
+                field: { name: tag, label: "Tag", widget: string }
+              - { name: hours, label: "Hours (e.g. Open daily · 08:00 – 22:00)", widget: string }
+          - name: menuGroups
+            label: "Menu sections"
+            label_singular: "Menu section"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Section title", widget: string }
+              - name: items
+                label: "Items"
+                label_singular: "Item"
+                widget: list
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { name: name, label: "Dish", widget: string }
+                  - { name: price, label: "Price", widget: string }

@@ -1,0 +1,12 @@
+{
+  "note": "Sample schedule — subject to change. Confirm current times via WhatsApp before visiting.",
+  "days": [
+    { "day": "Monday",    "slots": [ {"time":"06:00","class":"MB Tabata"}, {"time":"09:00","class":"Yoga"}, {"time":"18:00","class":"Zumba"}, {"time":"19:30","class":"MB Boxing"} ] },
+    { "day": "Tuesday",   "slots": [ {"time":"06:00","class":"MB Circuit"}, {"time":"09:00","class":"Pound Fit"}, {"time":"18:00","class":"MB Core Blast"}, {"time":"19:30","class":"Yoga"} ] },
+    { "day": "Wednesday", "slots": [ {"time":"06:00","class":"MB Body Shape"}, {"time":"09:00","class":"Yoga"}, {"time":"18:00","class":"Zumba"}, {"time":"19:30","class":"MB Tabata"} ] },
+    { "day": "Thursday",  "slots": [ {"time":"06:00","class":"MB Boxing"}, {"time":"09:00","class":"MB Core Blast"}, {"time":"18:00","class":"Pound Fit"}, {"time":"19:30","class":"MB Circuit"} ] },
+    { "day": "Friday",    "slots": [ {"time":"06:00","class":"MB Tabata"}, {"time":"09:00","class":"Yoga"}, {"time":"18:00","class":"MB Body Shape"}, {"time":"19:30","class":"Zumba"} ] },
+    { "day": "Saturday",  "slots": [ {"time":"07:00","class":"Weekend Group Burn"}, {"time":"09:00","class":"Yoga"}, {"time":"16:00","class":"Pound Fit"} ] },
+    { "day": "Sunday",    "slots": [ {"time":"08:00","class":"Yoga Flow"}, {"time":"16:00","class":"MB Core Blast"} ] }
+  ]
+}

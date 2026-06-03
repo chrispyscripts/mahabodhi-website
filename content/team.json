@@ -1,0 +1,11 @@
+{
+  "note": "We're putting together profiles for our full roster of coaches and therapists. Meet them here soon — in the meantime, here are the roles on our floor.",
+  "members": [
+    { "name": "Coming Soon", "role": "Head Coach", "photo": "", "bio": "Leads programming and sets the training standard across the floor." },
+    { "name": "Coming Soon", "role": "Strength & Conditioning", "photo": "", "bio": "Builds strength, power, and endurance with smart, progressive plans." },
+    { "name": "Coming Soon", "role": "Yoga Instructor", "photo": "", "bio": "Guides breath, flow, and mobility for balance of body and mind." },
+    { "name": "Coming Soon", "role": "Zumba & Dance", "photo": "", "bio": "Brings the energy that makes cardio feel like a celebration." },
+    { "name": "Coming Soon", "role": "Boxing Coach", "photo": "", "bio": "Teaches technique, footwork, and confidence on the pads and bags." },
+    { "name": "Coming Soon", "role": "Physiotherapist", "photo": "", "bio": "Supports recovery, mobility, and pain relief so you train for the long run." }
+  ]
+}

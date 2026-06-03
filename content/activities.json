@@ -1,0 +1,12 @@
+{
+  "activities": [
+    { "name": "Zumba", "category": "Cardio", "pill": "cardio", "duration": "60", "intensity": "High", "level": "All levels", "description": "A dance-fuelled cardio party that torches calories while you have way too much fun. No rhythm required — just follow the beat." },
+    { "name": "Pound Fit", "category": "Cardio", "pill": "cardio", "duration": "45", "intensity": "Mid-High", "level": "All levels", "description": "Drumstick-driven full-body cardio blending rhythm, conditioning, and core work into one electric session." },
+    { "name": "MB Tabata", "category": "HIIT", "pill": "strength", "duration": "30", "intensity": "High", "level": "Intermediate", "description": "Short, explosive 20-on / 10-off intervals engineered for maximum fat burn and afterburn in minimal time." },
+    { "name": "MB Circuit Training", "category": "Strength", "pill": "strength", "duration": "50", "intensity": "Mid-High", "level": "All levels", "description": "Station-to-station conditioning that builds total-body power and endurance with strength, cardio, and functional moves." },
+    { "name": "MB Boxing", "category": "Combat", "pill": "strength", "duration": "60", "intensity": "High", "level": "All levels", "description": "Punch, jab, and footwork drills on the pads and bags for a powerful, stress-busting, full-body sweat." },
+    { "name": "MB Body Shape", "category": "Sculpt", "pill": "strength", "duration": "50", "intensity": "Mid", "level": "All levels", "description": "Targeted resistance toning to sculpt, define, and strengthen every major muscle group, rep by rep." },
+    { "name": "MB Core Blast", "category": "Core", "pill": "strength", "duration": "30", "intensity": "Mid", "level": "All levels", "description": "Focused abdominal and core work for a stable, strong, and balanced midsection that powers everything else." },
+    { "name": "Yoga", "category": "Mind & Body", "pill": "mind", "duration": "60", "intensity": "Low-Mid", "level": "All levels", "description": "Breath, flow, and flexibility to restore balance, release tension, and calm the mind after a hard week." }
+  ]
+}

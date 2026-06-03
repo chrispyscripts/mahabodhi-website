@@ -1,0 +1,52 @@
+{
+  "venues": [
+    {
+      "floor": "2nd Floor",
+      "name": "Casa Fina Café & Healthy Bar",
+      "image": "assets/coffee.jpg",
+      "description": "A relaxed, light-filled space for healthy brunch and a slow coffee. Think fresh salads, smoothie bowls, and low-calorie sandwiches, alongside organic cold-pressed juices and smoothies boosted with superfoods like chia seeds and spirulina.",
+      "tags": ["Smoothie Bowls", "Fresh Salads", "Cold-Pressed Juice", "Specialty Coffee"],
+      "hours": "Open daily · 08:00 – 22:00"
+    },
+    {
+      "floor": "3rd Floor",
+      "name": "Hannari Japanese BBQ & Teppanyaki",
+      "image": "",
+      "description": "An interactive, all-you-can-eat Japanese BBQ & shabu experience. Grill premium cuts right at your table, share a steaming shabu pot, or watch the teppanyaki sizzle — perfect for family celebrations and gatherings with friends and colleagues.",
+      "tags": ["All-You-Can-Eat", "Yakiniku BBQ", "Shabu Shabu", "Teppanyaki"],
+      "hours": "Open daily · 11:00 – 22:00"
+    }
+  ],
+  "menuGroups": [
+    {
+      "title": "Smoothie & Juice Bar",
+      "items": [
+        { "name": "Açaí Energy Bowl", "price": "45K" },
+        { "name": "Green Spirulina Bowl", "price": "48K" },
+        { "name": "Mango Chia Bowl", "price": "42K" },
+        { "name": "Cold-Pressed Greens", "price": "38K" },
+        { "name": "Berry Protein Smoothie", "price": "40K" }
+      ]
+    },
+    {
+      "title": "Fresh & Light",
+      "items": [
+        { "name": "Quinoa Power Salad", "price": "55K" },
+        { "name": "Grilled Chicken Caesar", "price": "58K" },
+        { "name": "Avocado Sourdough Toast", "price": "45K" },
+        { "name": "Low-Cal Club Sandwich", "price": "52K" },
+        { "name": "Mahabodhi Buddha Bowl", "price": "60K" }
+      ]
+    },
+    {
+      "title": "Hannari Japanese",
+      "items": [
+        { "name": "Wagyu Yakiniku Set", "price": "185K" },
+        { "name": "Shabu Shabu Platter", "price": "165K" },
+        { "name": "Teppanyaki Seafood", "price": "175K" },
+        { "name": "Salmon Sashimi", "price": "75K" },
+        { "name": "Chicken Karaage", "price": "48K" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+
+# Vercel CLI link/state
+.vercel
+
+# Node / Decap local backend
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Local preview tooling
+.claude/

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant · Mahabodhi Health &amp; Fitness · Solo</title>
+  <meta name="description" content="Mahabodhi Eatery in Solo — Casa Fina Café & Healthy Bar and Hannari Japanese BBQ & Teppanyaki. Healthy food that tastes incredible." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="Mahabodhi home">
+        <span class="brand__leaf" aria-hidden="true"><img src="assets/logo-tree.png" alt="" /></span>
+        <span class="brand__text">MAHA<strong>BODHI</strong></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <a href="group-training.html" data-i18n="nav.training">Group Training</a>
+        <a href="restaurant.html" aria-current="page" data-i18n="nav.restaurant">Restaurant</a>
+        <a href="team.html" data-i18n="nav.team">Our Team</a>
+        <a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="index.html#community" data-i18n="nav.community">Community</a>
+        <a href="index.html#contact" class="nav__cta" data-i18n="nav.cta">Join Us</a>
+      </nav>
+      <div class="nav__right">
+        <div class="nav__lang">
+          <span class="nav__lang-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <select id="langSelect" aria-label="Select language">
+            <option value="en">EN</option><option value="id">ID</option><option value="jv">JV</option>
+          </select>
+        </div>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg" style="background-image:url('assets/coffee.jpg')"></div>
+    <div class="container">
+      <p class="eyebrow">Mahabodhi Eatery</p>
+      <h1>The Restaurant</h1>
+      <p class="page-hero__lead">Two concepts under one roof, steps from the gym floor — proof that eating well never means eating boring.</p>
+    </div>
+  </section>
+
+  <!-- VENUES -->
+  <section class="section">
+    <div class="container" id="venuesWrap"></div>
+  </section>
+
+  <!-- MENU HIGHLIGHTS -->
+  <section class="section" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">A Taste Of The Menu</p>
+        <h2 class="section__title">Menu highlights</h2>
+        <p class="section__intro">A sample of guest favourites — the full menu is available in-venue.</p>
+      </div>
+      <div class="menu__grid" id="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- AMBIANCE -->
+  <section class="gallery section">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">The Space</p>
+        <h2 class="section__title">Soak in the atmosphere</h2>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--wide reveal"><img src="assets/coffee.jpg" alt="Specialty coffee at Casa Fina" loading="lazy" /><figcaption>Casa Fina Café</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/reception.jpg" alt="Warm welcome at the front desk" loading="lazy" /><figcaption>A Warm Welcome</figcaption></figure>
+        <figure class="gallery__item reveal"><img src="assets/building.jpg" alt="Maha Bodhi building exterior" loading="lazy" /><figcaption>Find Us In Solo</figcaption></figure>
+      </div>
+      <div class="section__cta reveal">
+        <a href="https://wa.me/6281229120550" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Reserve via WhatsApp →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="brand brand--footer">
+        <span class="brand__leaf" aria-hidden="true"><img src="assets/logo-tree.png" alt="" /></span>
+        <span class="brand__text">MAHA<strong>BODHI</strong></span>
+      </a>
+      <p class="footer__tag" data-i18n="footer.tag">Your Health Is Your Wealth · One Stop Healthy Solution</p>
+      <p class="footer__copy">© <span id="year"></span> <span data-i18n="footer.copy">Mahabodhi Health &amp; Fitness Center, Solo. All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
