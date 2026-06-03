@@ -5,6 +5,8 @@ backend:
   name: github
   repo: chrispyscripts/mahabodhi-website
   branch: main
+  base_url: https://mahabodhi-website.vercel.app   # OAuth helper lives here (/api/auth, /api/callback)
+  auth_endpoint: api/auth
 
 # Lets the client edit on their own computer with no GitHub login while testing:
 #   run `npx decap-server` then open /admin  (see CMS-SETUP.md)

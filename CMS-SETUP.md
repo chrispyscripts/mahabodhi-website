@@ -49,23 +49,28 @@ backend:
 ```
 
 ### Step D — Enable login (GitHub OAuth)
-Decap needs an OAuth helper so the client can log in with GitHub. Two easy routes:
-- **Easiest:** host the site (or just the auth helper) on **Netlify** and enable
-  *Identity + Git Gateway* — then switch the backend to `name: git-gateway` and the
-  client logs in with an email/password you invite. (Netlify can deploy the same repo.)
-- **Stay on Vercel:** deploy a tiny OAuth provider (free, ~5 min) such as
-  `decap-cms-github-oauth` on Cloudflare Workers or Vercel, create a **GitHub OAuth App**
-  (Settings → Developer settings → OAuth Apps) for the client's account, and add its URL:
-  ```yaml
-  backend:
-    name: github
-    repo: OWNER/REPO
-    branch: main
-    base_url: https://your-oauth-helper-url
-  ```
+The OAuth helper is **already built into this project** as serverless functions
+(`api/auth.js` + `api/callback.js`), and `admin/config.yml` already points at them.
+You just need to create a GitHub OAuth App and give Vercel its two secrets.
 
-> The client never needs the GitHub *password* day-to-day — they just click
-> "Login with GitHub" once and stay signed in. Only authorised accounts can edit.
+1. **Create a GitHub OAuth App**
+   GitHub → your avatar → **Settings → Developer settings → OAuth Apps → New OAuth App**
+   - **Application name:** `Mahabodhi CMS`
+   - **Homepage URL:** `https://mahabodhi-website.vercel.app`
+   - **Authorization callback URL:** `https://mahabodhi-website.vercel.app/api/callback`
+   - Click **Register**, then **Generate a new client secret**. Copy the **Client ID** and **Client secret**.
+
+2. **Add them to Vercel**
+   Vercel → project `mahabodhi-website` → **Settings → Environment Variables** → add:
+   - `GITHUB_OAUTH_CLIENT_ID` = the Client ID
+   - `GITHUB_OAUTH_CLIENT_SECRET` = the Client secret
+   Then **redeploy** (Deployments → ⋯ → Redeploy) so the functions pick up the values.
+
+3. **Done.** Visit `/admin`, click **Login with GitHub**, authorise once, and edit away.
+
+> If you move to a custom domain later, update `base_url` in `admin/config.yml` and the
+> OAuth App's callback URL to match the new domain.
+> Only GitHub accounts with write access to the repo can actually save changes.
 
 ---
 
