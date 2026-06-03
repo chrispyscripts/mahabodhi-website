@@ -3,7 +3,7 @@
 # Replace OWNER/REPO below after the repo is created (see CMS-SETUP.md).
 backend:
   name: github
-  repo: OWNER/REPO        # e.g. mahabodhi-solo/mahabodhi-website
+  repo: chrispyscripts/mahabodhi-website
   branch: main
 
 # Lets the client edit on their own computer with no GitHub login while testing:
