@@ -11,5 +11,102 @@
 <body>
   <!-- Decap CMS (formerly Netlify CMS): WordPress-style git-based editor -->
   <script src="https://unpkg.com/decap-cms@^3.6.3/dist/decap-cms.js"></script>
+
+  <!-- Make the editor's live preview pane look like the real website -->
+  <script>
+    (function () {
+      var CMS = window.CMS, h = window.h, createClass = window.createClass;
+      if (!CMS) return;
+
+      // Load the real site styles + fonts into the preview iframe
+      CMS.registerPreviewStyle("/styles.css");
+      CMS.registerPreviewStyle("https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+      CMS.registerPreviewStyle(
+        "html,body{background:#0c0c0d!important;color:#f5f3ef;margin:0}" +
+        ".cms-prev{padding:26px}.cms-prev h2{font-size:1.8rem}",
+        { raw: true }
+      );
+
+      var esc = function (s) {
+        return String(s == null ? "" : s).replace(/[&<>\"]/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+        });
+      };
+
+      function activitiesHTML(d) {
+        return '<div class="activities">' + (d.activities || []).map(function (a) {
+          return '<article class="activity"><div class="activity__top"><h3>' + esc(a.name) +
+            '</h3><span class="pill pill--' + esc(a.pill) + '">' + esc(a.category) + '</span></div><p>' +
+            esc(a.description) + '</p><div class="activity__meta"><span><b>' + esc(a.duration) +
+            '</b> min</span><span>Intensity <b>' + esc(a.intensity) + '</b></span><span>' + esc(a.level) +
+            '</span></div></article>';
+        }).join("") + '</div>';
+      }
+
+      function scheduleHTML(d) {
+        return '<div class="schedule">' + (d.days || []).map(function (day) {
+          return '<div class="sched-day"><div class="sched-day__name">' + esc(day.day) +
+            '</div><div class="sched-slots">' + (day.slots || []).map(function (s) {
+              return '<div class="slot"><b>' + esc(s.time) + '</b><span>' + esc(s["class"]) + '</span></div>';
+            }).join("") + '</div></div>';
+        }).join("") + '</div>' + (d.note ? '<p class="sched-note">* ' + esc(d.note) + '</p>' : "");
+      }
+
+      function teamHTML(d) {
+        return (d.note ? '<p class="team__note">' + esc(d.note) + '</p>' : "") +
+          '<div class="team__grid">' + (d.members || []).map(function (m) {
+            var avatar = m.photo
+              ? '<img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" style="width:100%;height:100%;object-fit:cover;opacity:1">'
+              : '<img src="/assets/logo-tree.png" alt="">';
+            return '<article class="coach ' + (m.photo ? "" : "coach--tba") + '"><div class="coach__avatar">' +
+              avatar + '</div><h3>' + esc(m.name) + '</h3><p class="coach__role">' + esc(m.role) +
+              '</p><p class="coach__bio">' + esc(m.bio) + '</p></article>';
+          }).join("") + '</div>';
+      }
+
+      function restaurantHTML(d) {
+        var venues = '<div class="container" style="padding:0">' + (d.venues || []).map(function (v) {
+          var img = v.image
+            ? '<div class="venue__img" style="background-image:url(\'' + esc(v.image) + '\')"></div>'
+            : '<div class="venue__img venue__img--brand"><img src="/assets/logo-tree.png" alt=""></div>';
+          var parts = String(v.hours || "").split("·");
+          var hours = parts.length > 1
+            ? esc(parts[0]) + "· <b>" + esc(parts.slice(1).join("·").trim()) + "</b>"
+            : esc(v.hours);
+          return '<article class="venue">' + img + '<div class="venue__body"><span class="venue__floor">' +
+            esc(v.floor) + '</span><h2>' + esc(v.name) + '</h2><p>' + esc(v.description) + '</p><ul class="chips">' +
+            (v.tags || []).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join("") +
+            '</ul><p class="venue__hours">' + hours + '</p></div></article>';
+        }).join("") + '</div>';
+        var menu = '<div class="menu__grid">' + (d.menuGroups || []).map(function (g) {
+          return '<div class="menu__col"><h3>' + esc(g.title) + '</h3><ul>' +
+            (g.items || []).map(function (i) { return '<li>' + esc(i.name) + ' <span>' + esc(i.price) + '</span></li>'; }).join("") +
+            '</ul></div>';
+        }).join("") + '</div>';
+        return venues + '<div style="height:32px"></div>' + menu;
+      }
+
+      function previewFor(render) {
+        return createClass({
+          render: function () {
+            var data = this.props.entry.get("data");
+            data = data && data.toJS ? data.toJS() : {};
+            var html;
+            try { html = render(data); } catch (e) { html = '<p style="color:#f6921e">' + esc(e.message) + '</p>'; }
+            return h("div", { className: "cms-prev", dangerouslySetInnerHTML: { __html: html } });
+          }
+        });
+      }
+
+      // group_training collection holds two files (activities + schedule) — branch on the data shape
+      CMS.registerPreviewTemplate("group_training", previewFor(function (d) {
+        if (d.activities) return activitiesHTML(d);
+        if (d.days) return scheduleHTML(d);
+        return "";
+      }));
+      CMS.registerPreviewTemplate("team", previewFor(teamHTML));
+      CMS.registerPreviewTemplate("restaurant", previewFor(restaurantHTML));
+    })();
+  </script>
 </body>
 </html>
