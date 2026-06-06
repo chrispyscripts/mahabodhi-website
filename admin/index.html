@@ -33,6 +33,17 @@
         });
       };
 
+      // Resolve an image field to a URL — works for both saved paths and
+      // brand-new uploads (Decap returns a blob URL before publishing).
+      var assetUrl = function (getAsset, path) {
+        if (!path || !getAsset) return "";
+        try {
+          var a = getAsset(path);
+          var u = a && a.toString ? a.toString() : String(a);
+          return u && u.indexOf("[object") !== 0 ? u : "";
+        } catch (e) { return ""; }
+      };
+
       function activitiesHTML(d) {
         return '<div class="activities">' + (d.activities || []).map(function (a) {
           return '<article class="activity"><div class="activity__top"><h3>' + esc(a.name) +
@@ -52,11 +63,12 @@
         }).join("") + '</div>' + (d.note ? '<p class="sched-note">* ' + esc(d.note) + '</p>' : "");
       }
 
-      function teamHTML(d) {
+      function teamHTML(d, getAsset) {
         return (d.note ? '<p class="team__note">' + esc(d.note) + '</p>' : "") +
           '<div class="team__grid">' + (d.members || []).map(function (m) {
-            var avatar = m.photo
-              ? '<img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" style="width:100%;height:100%;object-fit:cover;opacity:1">'
+            var purl = assetUrl(getAsset, m.photo);
+            var avatar = purl
+              ? '<img src="' + esc(purl) + '" alt="' + esc(m.name) + '" style="width:100%;height:100%;object-fit:cover;opacity:1">'
               : '<img src="/assets/logo-tree.png" alt="">';
             return '<article class="coach ' + (m.photo ? "" : "coach--tba") + '"><div class="coach__avatar">' +
               avatar + '</div><h3>' + esc(m.name) + '</h3><p class="coach__role">' + esc(m.role) +
@@ -64,10 +76,11 @@
           }).join("") + '</div>';
       }
 
-      function restaurantHTML(d) {
+      function restaurantHTML(d, getAsset) {
         var venues = '<div class="container" style="padding:0">' + (d.venues || []).map(function (v) {
-          var img = v.image
-            ? '<div class="venue__img" style="background-image:url(\'' + esc(v.image) + '\')"></div>'
+          var vurl = assetUrl(getAsset, v.image);
+          var img = vurl
+            ? '<div class="venue__img" style="background-image:url(\'' + esc(vurl) + '\')"></div>'
             : '<div class="venue__img venue__img--brand"><img src="/assets/logo-tree.png" alt=""></div>';
           var parts = String(v.hours || "").split("·");
           var hours = parts.length > 1
@@ -92,7 +105,7 @@
             var data = this.props.entry.get("data");
             data = data && data.toJS ? data.toJS() : {};
             var html;
-            try { html = render(data); } catch (e) { html = '<p style="color:#f6921e">' + esc(e.message) + '</p>'; }
+            try { html = render(data, this.props.getAsset); } catch (e) { html = '<p style="color:#f6921e">' + esc(e.message) + '</p>'; }
             return h("div", { className: "cms-prev", dangerouslySetInnerHTML: { __html: html } });
           }
         });
